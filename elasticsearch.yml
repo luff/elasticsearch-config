@@ -1,0 +1,9 @@
+cluster.name: elasticsearch_huiyuan
+node.name: elasticsearch_huiyuan_1
+
+network.host: 10.0.0.195
+http.port: 9200
+
+node.max_local_storage_nodes: 1
+action.destructive_requires_name: true
+
