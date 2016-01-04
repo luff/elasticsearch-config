@@ -1,0 +1,30 @@
+{
+  "template-hy-httperr" : {
+    "template" : "*_hy_httperr",
+    "settings" : { "index.number_of_shards": 1, "number_of_replicas": 0 },
+    "mappings" : {
+      "httperr" : {
+        "_ttl"       : { "enabled": false },
+        "_all"       : { "enabled": false },
+        "properties" : {
+          "@timestamp"  : { "type": "date", "format": "dateOptionalTime" },
+          "@source"     : { "type": "string", "index": "not_analyzed" },
+          "@version"    : { "type": "string", "index": "not_analyzed", "store": "no" },
+          "c-ip"        : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "c-port"      : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "cs-method"   : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "cs-uri"      : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "cs-version"  : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "s-ip"        : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "s-port"      : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "s-queuename" : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "s-reason"    : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "s-siteid"    : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "sc-status"   : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "type"        : { "type": "string", "index": "not_analyzed", "store": "no" }
+        }
+      }
+    }
+  }
+}
+
