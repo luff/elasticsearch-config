@@ -1,0 +1,24 @@
+{
+  "template-hy-applog" : {
+    "template" : "*_hy_applog",
+    "settings" : { "index.number_of_shards": 1, "number_of_replicas": 0 },
+    "mappings" : {
+      "applog" : {
+        "_ttl"       : { "enabled": false },
+        "_all"       : { "enabled": false },
+        "properties" : {
+          "@timestamp" : { "type": "date", "format": "dateOptionalTime" },
+          "@source"    : { "type": "string", "index": "not_analyzed" },
+          "@version"   : { "type": "string", "index": "not_analyzed", "store": "no" },
+          "channel"    : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "detail"     : { "type": "string", "store": "no" },
+          "host"       : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "level"      : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "tag"        : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "type"       : { "type": "string", "index": "not_analyzed", "store": "no" }
+        }
+      }
+    }
+  }
+}
+
