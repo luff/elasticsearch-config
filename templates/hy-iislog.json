@@ -1,0 +1,39 @@
+{
+  "template-hy-iislog" : {
+    "template" : "*_hy_iislog",
+    "settings" : { "index.number_of_shards": 1, "number_of_replicas": 0 },
+    "mappings" : {
+      "iislog" : {
+        "_ttl"       : { "enabled": false },
+        "_all"       : { "enabled": false },
+        "properties" : {
+          "@timestamp"      : { "type": "date", "format": "dateOptionalTime" },
+          "@source"         : { "type": "string", "index": "not_analyzed" },
+          "@version"        : { "type": "string", "index": "not_analyzed", "store": "no" },
+          "c-ip"            : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "cs-Cookie"       : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "cs-Referer"      : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "cs-bytes"        : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "cs-host"         : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "cs-method"       : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "cs-uri-query"    : { "type": "string", "store": "no" },
+          "cs-uri-stem"     : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "cs-username"     : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "cs-version"      : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "csUser-Agent"    : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "s-computername"  : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "s-ip"            : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "s-port"          : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "s-sitename"      : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "sc-bytes"        : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "sc-status"       : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "sc-substatus"    : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "sc-win32-status" : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "time-taken"      : { "type": "string", "index": "not_analyzed", "store": "no", "doc_values": true },
+          "type"            : { "type": "string", "index": "not_analyzed", "store": "no" }
+        }
+      }
+    }
+  }
+}
+
